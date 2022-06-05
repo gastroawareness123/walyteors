@@ -1,19 +1,14 @@
+{% extends 'services/common.html' %}
 {% load static %}
-<!doctype html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta charset="utf-8">
-<title>Gastro Awarness</title>
-<link href="{% static '/services/css/style2.css' %}" rel="stylesheet" type="text/css">
-</head>
+
+{% block body_content %}
 
 <body>
 	
     <div class="hm-banner">
     <img src="{% static '/services/image/banner.png' %}" class=""> 
     <div class="hm-title container">
-    <p>For personalised information about your Gastric Disorders <br> Please scan QR Code to access page!
+    <p>For more information about Diarrhea <br> Please scan QR Code to access page!
     </p>
     </div>
     </div>
@@ -58,4 +53,4 @@
 
 
 </body>
-</html>
+{% endblock %}
