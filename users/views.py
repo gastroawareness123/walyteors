@@ -29,3 +29,20 @@ def doctor_hits_api(request):
 
     except Exception as e:
         return JsonResponse({'status':'failure','message':str(e)}, status=500)
+
+@csrf_exempt
+def get_images(request):
+
+    docs = Doctor.objects.all()
+
+    urls = []
+    for doc in docs:
+        url = None
+        try:
+            url = doc.qr_code.url
+        except:
+            url = None
+        if url:
+            urls.append(url)
+    
+    return JsonResponse({'status':'success','data':urls})

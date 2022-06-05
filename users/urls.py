@@ -4,4 +4,5 @@ from .views import *
 
 urlpatterns = [
     path('register-doctor-hit/', doctor_hits_api, name='doctor-hits-api'),
+    path('get-images/', get_images)
 ]
