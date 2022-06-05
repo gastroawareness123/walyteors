@@ -1,0 +1,86 @@
+{% extends 'services/common.html' %}
+{% load static %}
+{% block extra_links %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70975TBCJ5"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-70975TBCJ5');
+</script>
+{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .lng-btn {
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+{% block body_content %}
+<body>
+
+
+
+    <div class="hm-banner">
+        <img src="{% static '/services/image/banner.png' %}" class="">
+    </div>
+    <div class="hm-title container">
+        <p>For more information about Diarrhea</p>
+        <a href="#langpop" class="clickbtn-lng">CLICK HERE</a>
+    </div>
+
+    <!--<section class="header">
+        <div class="container">
+            <h1>SELECT LANGUAGE</h1>
+        </div>
+    </section>-->
+
+
+
+    <section class="body-area" id="langpop">
+        <div class="container">
+
+            <span class="custom-header chose-title"><h2>Choose language</h2></span>
+            <form method='POST' action='' id='langauge-form'>
+                {% csrf_token %}
+                <ul class="language">
+             
+                    <input name='language' id='lng-text' hidden />
+                    <li><a class='lng-btn' data-lang='english'>English</a></li>
+                    <li><a class='lng-btn' data-lang='hindi'>हिंदी</a></li>
+                    <li><a class='lng-btn' data-lang='marathi'>मराठी</a></li>
+                    <li><a class='lng-btn' data-lang='gujarati'>ગુજરાતી</a></li>
+                    <li><a class='lng-btn' data-lang='tamil'>தமிழ்</a></li>
+                    <li><a class='lng-btn' data-lang='telugu'>తెలుగు</a></li>
+                    <li><a class='lng-btn' data-lang='bengali'>বাংলা</a></li>
+                    <li><a class='lng-btn' data-lang='oriya'>ଓଡିଆ</a></li>
+                    <li><a class='lng-btn' data-lang='kannada'>ಕನ್ನಡ</a></li>
+                </ul>
+            </form>
+        </div>
+        <div class="custom-footer" >sdfsdfdsnfsl</div>
+    </section>
+</body>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    const languageButtons = document.getElementsByClassName('lng-btn')
+    const languageText = document.getElementById('lng-text')
+    const languageForm = document.getElementById('langauge-form')
+    for (let eachButton of languageButtons) {
+        eachButton.addEventListener('click', OnLanguageButtonClickHandler)
+    }
+
+    function OnLanguageButtonClickHandler(e) {
+        console.log(e.target)
+        languageText.value = e.target.getAttribute('data-lang')
+        languageForm.submit()
+    }
+</script>
+{% endblock %}

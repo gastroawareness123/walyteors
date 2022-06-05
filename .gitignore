@@ -1,0 +1,5 @@
+db.sqlite3
+media/qr_codes/*.jpg
+*.pyc
+
+*.cpython-38.pyc

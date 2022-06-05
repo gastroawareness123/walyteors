@@ -1,0 +1,123 @@
+{% extends 'services/common.html' %}
+{% load static %}
+{% block extra_links %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70975TBCJ5"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+{% endblock %}
+
+
+{% block body_content %}
+<body>
+    {% for message in messages %}
+        <script>
+            alert('{{message}}')
+            window.history.back()    
+        </script>
+    {% endfor %}
+
+                                        <!--VIDEOPOP-->
+                                        <div class="video-pop" id="video1">
+                                            <a href="#">X</a>
+                                            <iframe src="video-pop.html" name="Right"></iframe>
+                                        </div>
+                                        <!--VIDEOPOP-->
+
+
+
+
+<header class="custom-header chose-title">
+	<div class="container">
+	    <h2>Dr. {{ doctor.name }}</h2>
+    </div>
+</header>
+<section class="body-area">
+
+  <div class="container">
+        
+    <div class="change-language">
+        <a id='choose-lng'><img style='cursor: pointer;' src="{% static 'services/image/flow.jpg' %}"> Change language
+        </a>
+    </div>
+
+<!---SERVICE START-------------->
+    <div class="service-wrapper">
+        <h1>Click on the video to learn more.</h1>
+        {% for content in contents %}
+            <div id="video-container" >
+                <div class="video-wrap"> 
+                {{ content.video_embed_code | safe }}
+                </div>    
+            </div>
+        {% endfor %}
+    </div>
+<!---SERVICE END-------------->
+
+
+ 
+
+
+
+
+</div>      
+</section>
+<footer class="custom-footer" >sdfsdfdsnfsl</footer>
+</body>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">function refreshIframe() {
+    var ifr = document.getElementsByName('Right')[0];
+    ifr.src = ifr.src;
+}</script>
+<script>
+    const chooseLangButton = document.getElementById('choose-lng')
+    const iFrameElements = document.getElementsByTagName('iframe')
+
+    chooseLangButton.addEventListener('click', onChooseLangButtonClickHandler)
+    // window.addEventListener('load', fixIframeDimesions)
+
+    function onChooseLangButtonClickHandler(e){
+        const url = window.location.pathname
+        const doctorId = url.split('/').at(-1)
+        console.log(doctorId)
+        const redirectURL = `${window.location.origin}/select-language/?next=/${doctorId}`
+        window.location.href = redirectURL
+    }
+
+    function fixIframeDimesions(e){
+        for(let eachIframe of iFrameElements){
+            eachIframe.removeAttribute('width')
+            eachIframe.removeAttribute('height')
+        }
+    }
+
+    async function storeDoctorHist(data) {
+        try {
+            const doctor_id = "{{ doctor.id }}"
+            const response = await axios.post('/users/register-doctor-hit/', { ...data, doctor_id})
+            if(response.status == 201){
+                return response.data.status
+            }
+        } catch (err) {
+            console.log(err.data.message)
+        }
+    }
+
+    function getLocationCoordinates(){
+        storeDoctorHist({
+            //village: village.trim().toUpperCase(),
+            city: "Temp",
+            state: "Temp",
+            latitude: 10.1112,
+            longitude: 29.1231,
+        })
+        .then(resp => {
+            console.log(resp)
+        })
+        .catch(err => {
+            console.error(err.message)
+        })
+    }
+    window.onload = getLocationCoordinates()
+</script>
+{% endblock %}
