@@ -2,7 +2,7 @@ import qrcode
 from django.conf import settings
 import os
 
-LINK_TEMPLATE_FOR_QRCODE = 'http://127.0.0.1:8000/{}'
+LINK_TEMPLATE_FOR_QRCODE = 'http://walyteors.online/{}'
 
 def generate_qrcode_for_doctor(doctor):
     print('reached here services')
