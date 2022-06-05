@@ -51,6 +51,12 @@ class DoctorResource(resources.ModelResource):
 
         return headers
 
+    def dehydrate_sales_officer(self, obj):
+        return obj.sales_officer.name
+
+    def dehydrate_category(self,obj):
+        return obj.category.name
+
     def dehydrate_is_qr_code_generated(self, obj):
         if obj.qr_code:
             return 'Yes'
