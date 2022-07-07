@@ -12,7 +12,7 @@ with open(file_path, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
       
     # extracting field names through first row
-    fields = next(csvreader)
+    # fields = next(csvreader)
   
     # extracting each data row one by one
     for row in csvreader:
