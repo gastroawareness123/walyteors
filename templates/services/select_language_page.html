@@ -25,10 +25,14 @@
 
 
     <div class="hm-banner">
-        <img src="{% static '/services/image/banner.png' %}" class="">
+        <img src="{% static '/services/image/model.png' %}" class="">
     </div>
     <div class="hm-title container">
-        <p>For more information about Diarrhea</p>
+        <p>WORRIED ABOUT<br>
+            <span>DIARRHEA?</span></p>
+
+        <hr class="hm-hr">
+
         <a href="#langpop" class="clickbtn-lng">CLICK HERE</a>
     </div>
 
@@ -43,7 +47,7 @@
     <section class="body-area" id="langpop">
         <div class="container">
 
-            <span class="custom-header chose-title"><h2>Choose language</h2></span>
+            <span class="custom-header chose-title"><h2>Choose Language</h2></span>
             <form method='POST' action='' id='langauge-form'>
                 {% csrf_token %}
                 <ul class="language">

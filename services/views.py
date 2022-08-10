@@ -26,7 +26,8 @@ def doctor_service_page_view(request,id):
         }
     
     except Doctor.DoesNotExist:
-        messages.error(request, 'Doctor doesnot exist. Please make sure the the link is proper')
+        # messages.error(request, 'Doctor doesnot exist. Please make sure the the link is proper')
+        pass
     except Service.DoesNotExist:
         messages.error(request, 'Doctor does not have any currnt service page.')
     except Exception as e:

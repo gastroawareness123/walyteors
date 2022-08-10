@@ -1,325 +1,128 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-
 body {
-    font-family: 'Lato', sans-serif;
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
+	font-family: 'Lato', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+  background-image: url('bg-img-new.jpg');
+      background-size: cover;
+    background-repeat: repeat;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-}
+a{color: #000; text-decoration:none;}
 
-p {
-    font-size: 14px;
-    line-height: 22px;
-}
+p{font-size: 14px; line-height: 22px;}
 
-.header {
-    background-color: #0a8f87;
-    font-weight: 700;
-    color: #fff;
-    font-size: 15px;
-    margin-bottom: 25px;
-}
+.header {background-color: #ffffff; font-weight: 700; color: #e61e25; font-size: 15px; margin-bottom: 25px;
+  border-bottom: 1px solid #e61e25;}
+.header h1 {margin: 0px; padding: 22px 0px;}
+.container {max-width: 1200px; width: 90%; margin: 0 auto}
 
-.header h1 {
-    margin: 0px;
-    padding: 22px 0px;
-}
+.language {margin: 0; padding: 0; list-style: none;}
+.language li {display: inline-block; max-width: 300px; vertical-align: top; width: 100%;  margin: 0px 0px 13px 0px;}
 
-.container {
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto
+.language li a {display: inline-block; width: 100%; background-color: #b5b5b5; color:#000000; font-weight:bold; text-align: center; 
+	text-decoration: none; font-size: 15px; height: 30px; padding-top: 11px; transition: all 0.5s ease;
+    -webkit-border-top-left-radius: 25px;
+    -webkit-border-top-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 25px;
+    -webkit-border-bottom-left-radius: 6px;
+    background-image: radial-gradient(circle at top right, #c5c7ce, #adb5bc);
+    background-image: radial-gradient(circle at top right, #c5c7ce, #adb5bc);
 }
+.language li a:hover {background-color:#e0e0e0; }
 
-.language {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+.change-language img {width: 20px; height:auto;  vertical-align: middle; margin-right: 9px;}
+.service-wrapper {border: 1px solid #e61e25; margin: 50px 0px 20px 0px; padding: 0px 20px 40px 20px;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+border-radius: 15px; /* future proofing */
+-khtml-border-radius: 15px; /* for old Konqueror browsers */}
 
-.language li {
-    display: inline-block;
-    max-width: 300px;
-    vertical-align: top;
-    width: 100%;
-    margin: 0px 13px 13px 0px;
-}
-
-.language li a {
-    display: inline-block;
-    width: 100%;
-    background-color: white;
-    color: black;
-    text-align: center;
-    border: 2px solid #7fc8f8;
-    text-decoration: none;
-    font-size: 15px;
-    height: 30px;
-    padding-top: 11px;
-    transition: all 0.5s ease;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 20px 8px;
-    /* future proofing */
-    -khtml-border-radius: 6px;
-    /* for old Konqueror browsers */
-}
-
-.language li a:hover {
-    background-color: #7fc8f8;
-}
-
-.change-language img {
-    width: 20px;
-    height: auto;
-    vertical-align: middle;    
-}
-
-.service-wrapper {
-    
-    margin: 0px 0px 20px 0px;
-    padding: 0px 20px 40px 20px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    /* future proofing */
-    -khtml-border-radius: 15px;
-    /* for old Konqueror browsers */
-}
-
-.service-wrapper h1 {
-    max-width: 100%;
-    margin: 0px auto 0px auto;
-    background-color: #ff5252;
-    padding: 11px 12px;
-    color: #fff;
-    font-weight: normal;
-    font-size: 18px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    /* future proofing */
-    -khtml-border-radius: 10px;
-    /* for old Konqueror browsers */
-}
+.service-wrapper h1 {max-width: 260px; width: 88%; margin: -26px auto 0px auto; background-color: #ffffff; padding: 11px 12px;
+    color: #e61e25; font-weight: normal; font-size: 18px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px; /* future proofing */
+-khtml-border-radius: 10px; /* for old Konqueror browsers */}
 
 
 
 
 
 /*VIDEOPOP*/
-#video1 {
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0);
-    position: fixed;
-    transition: all 0.2s ease;
-    left: 25%;
-    top: 0;
-}
-
-#video1:target {
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    left: 0;
-}
-
-.video-pop iframe {
-    width: 90%;
-    height: 80vh;
-    border: 0px;
-    margin-top: 5%
-}
-
-.video-pop a {
-    color: #fff;
-    float: right;
-    margin: 20px;
-    font-size: 22px;
-    font-weight: normal;
-}
+ #video1 {width: 1px; height:1px; overflow: hidden; background-color:rgba(0, 0, 0, 0); position: fixed;  transition: all 0.2s ease;
+ 	left: 25%; top:0;}
+ #video1:target{width: 100%;  height: 100vh; background-color: rgba(0, 0, 0, 0.95);  position: fixed;  z-index: 99999;  top: 0;  left: 0;}
+ .video-pop iframe {width: 90%;  height: 80vh; border: 0px; margin-top:5% }
+  .video-pop a {color: #fff; float: right; margin: 20px; font-size: 22px; font-weight: normal;}
 
 .video-wrap {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding-top: 56.25%;
-    /* 16:9 Aspect Ratio */
-}
-
-#video-container {
-    border: 3px solid #7fc8f8;
-    border-radius: 5px;
-    margin: 20px 0;
-    padding:10px
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
 iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+	position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
-
 /*VIDEOPOP*/
 
 .hm-title.container p {
-    font-size: 21px;
-    font-weight: bold;
-    line-height: 26px;
+   font-size: 25px;
+    font-weight: 800;
+    line-height: 32px;
     margin-top: 11px;
-    font-family: 'Oswald', sans-serif;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
     color: #2b2a28;
+    margin-bottom: 10px;
 }
 
-.hm-title {
-    margin: 103px auto;
-}
+.hm-title.container p span {font-size: 38px; color: #e61e25;}
 
-.hm-title.container {
-    width: 60%;
-}
-
+.hm-hr {width: 205px; margin-bottom: 20px;}
 
 .hm-banner img {
-    width: 100%;
+	width: auto;
     height: auto;
 }
 
-.change-language #choose-lng {
-    cursor: pointer;
-}
+.change-language #choose-lng {cursor: pointer;}
 
-.sm-text {
-    font-size: 12px;
-    padding-top: 0;
-    margin-top: 2px;
-}
+.sm-text {font-size: 12px; padding-top: 0; margin-top: 2px;}
 
-.sel-btn {
-    font-family: 'Oswald', sans-serif;
-    font-size: 19px;
-    background-color: #006f66;
-    width: auto;
-    padding: 4px 30px 6px 30px;
-    display: inline-block;
-    color: #ffffff;
-    text-align: center;
-    border: 2px solid #0a8f87;
-    text-decoration: none;
-    height: 30px;
-    transition: all 0.5s ease;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    -khtml-border-radius: 6px;
-}
-
-.cl-btn {
-    font-weight: bold;
-    font-size: 21px;
-    position: absolute;
-    right:10%;
-    top:2%;
-    color: white;
-}
+.sel-btn {font-family: 'Oswald', sans-serif; font-size: 19px;  background-color: #006f66;
+    width: auto; padding: 4px 30px 6px 30px; display: inline-block; color: #ffffff;
+text-align: center; border: 2px solid #0a8f87; text-decoration: none; height: 30px;
+transition: all 0.5s ease;  -moz-border-radius: 6px;  -webkit-border-radius: 6px;
+    border-radius: 6px; -khtml-border-radius: 6px;}
+.cl-btn { font-weight: bold; font-size: 21px;  float: right;}
 
 
-#langpop {
-    width: 100%;
-    height: 0px;
-    overflow: hidden;
-    background-color: white;
-    transition: all 0.2s ease;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 0px;
-}
+#langpop {width: 100%; height: 0px; overflow: hidden; background-color: #cbeee8; transition: all 0.2s ease; position: fixed; 
+  top: 0; left: 0; padding: 0px;  background-image: url('bg-img-new.jpg'); background-size: cover; background-repeat: repeat;}
 
-#langpop:target {
-    width: 100%;
-    height: 100vh;
-}
+#langpop:target {width: 88%;  height: 100vh;  padding: 24px;}
 
-#langpop > .container {
-    margin: 0 !important; 
-    width: 100%;
-    max-width:100% !important;
-}
+.clickbtn-lng {font-family:'Lato', sans-serif;  font-size: 16px;  background-color: #e61e25;  width: auto;  padding: 4px 20px 6px 20px;
+    display: inline-block;  color: #ffffff;  border: 2px solid #e61e25;  transition: all 0.5s ease;  -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;  border-radius: 6px;  -khtml-border-radius: 6px; font-weight: bold; text-transform: uppercase;}
 
-.clickbtn-lng {
-    font-family: 'Oswald', sans-serif;
-    font-size: 19px;
-    background-color: #002786;
-    width: auto;
-    padding: 5px 10px;
-    display: inline-block;
-    color: #ffffff;
-    border: 2px solid #002786;
-    transition: all 0.5s ease;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    -khtml-border-radius: 6px;
-    font-weight: 600;
-}
+.chose-title {width: 100%;  display: inline-block; margin-bottom: 18px; font-size: 20px; font-weight: bold; color: #e61e25;}
 
-.chose-title {
-    width: 100%;
-    display: inline-block;
-    padding: 12px 0;
-}
 
-.change-language {
-    margin:  40px 9px 40px 0px;
-}
-
-@media (max-width: 480px) {
-    #video1 {
-        left: 40%;
-        top: 0;
-    }
-
-    .change-language {
-        text-align: center;
-    }
-
-    .language li {
-        width: 100%;
-        margin: 0px 0px 13px 0px;
-    }
-}
-
-.custom-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #7fc8f8;
-    left:0;
-}
-
-.custom-header {
-    background-color: #ff5252;
-    color: white;
-}
-
-#langauge-form {
-    margin-top:40px;
-    padding: 0 24px;
+@media (max-width: 480px) { 
+	 #video1 {left: 40%; top:0;}
+	 .change-language {text-align: center;}
+	 .language li {width: 100%;  margin: 0px 0px 13px 0px;}
 }
