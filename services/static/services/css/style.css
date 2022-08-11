@@ -6,9 +6,10 @@ body {
     margin: 0px;
     padding: 0px;
     text-align: center;
-    background-image: url('bg-img-new.jpg');
-    background-size: cover;
-    background-repeat: repeat;
+    background-image: url('../image/bg-img-new.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    height: 100vh;
 }
 
 a {
@@ -131,6 +132,10 @@ p {
     top: 0;
 }
 
+#video-container {
+    margin-top: 25px;
+}
+
 #video1:target {
     width: 100%;
     height: 100vh;
@@ -177,34 +182,57 @@ iframe {
 
 /*VIDEOPOP*/
 
+.hm-banner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hm-title.container p {
     font-size: 25px;
     font-weight: 800;
     line-height: 32px;
-    margin-top: 11px;
     padding: 0px;
     font-family: 'Lato', sans-serif;
     color: #2b2a28;
-    margin-bottom: 10px;
 }
 
-.hm-title.container p span {
+/* .lp-banner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.lp-title.container p {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 32px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+    color: #2b2a28;
+}
+
+.lp-title.container p span {
     font-size: 38px;
     color: #e61e25;
 }
 
-.hm-hr {
+.lp-hr {
     width: 205px;
     margin-bottom: 20px;
 }
 
-.hm-banner img {
-    width: auto;
-    height: auto;
+.lp-banner img {
+    margin-top:10px;
+    width: 80%;
+    height: 80%;
 }
 
 .change-language #choose-lng {
     cursor: pointer;
+    color: #e61e25;
 }
 
 .sm-text {
@@ -243,7 +271,7 @@ iframe {
     width: 100%;
     height: 0px;
     overflow: hidden;
-    background-color: #cbeee8;
+    background-color: #f0f0f0;
     transition: all 0.2s ease;
     position: fixed;
     top: 0;
@@ -281,10 +309,20 @@ iframe {
 .chose-title {
     width: 100%;
     display: inline-block;
-    margin-bottom: 18px;
+    margin-bottom: 28px;
     font-size: 20px;
     font-weight: bold;
     color: #e61e25;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #e61e25;
+}
+
+.chose-title h2 {
+    padding-bottom: 0px !important;
+}
+
+#sp-title {
+    background-color: #fff;
 }
 
 
