@@ -79,7 +79,7 @@
         const url = window.location.pathname
         const doctorId = url.split('/').at(-1)
         console.log(doctorId)
-        const redirectURL = `${window.location.origin}/select-language/?next=/${doctorId}`
+        const redirectURL = `${window.location.origin}/select-language/{{doctor.id}}?next=/${doctorId}`
         window.location.href = redirectURL
     }
 
