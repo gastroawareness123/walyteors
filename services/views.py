@@ -28,17 +28,25 @@ def doctor_service_page_view(request,id):
     except Doctor.DoesNotExist:
         messages.error(request, 'Doctor doesnot exist. Please make sure the the link is proper')
     except Service.DoesNotExist:
-        messages.error(request, 'Doctor does not have any currnt service page.')
+        messages.error(request, 'Doctor does not have any current service page.')
     except Exception as e:
         messages.error('Something went wrong')
 
     return render(request, 'services/Service.html',context=context)
         
 
-def language_selected_page_view(request):
+def language_selected_page_view(request, id):
+    context = {}
+    try:
+        doctor = Doctor.objects.get(id=id)
+        context['doctor'] = doctor
+    except Doctor.DoesNotExist:
+        messages.error(request, 'Doctor doesnot exist. Please make sure the the link is proper')
+
     if request.method == 'POST':
         return redirect(f'{request.GET.get("next")}?language={request.POST.get("language")}')
-    return render(request, 'services/select_language_page.html')
+        
+    return render(request, 'services/select_language_page.html', context=context)
 
 def index_page(request):
     return render(request, 'services/index.html')

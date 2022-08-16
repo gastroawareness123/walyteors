@@ -22,7 +22,12 @@
 {% block body_content %}
 <body>
 
-
+    {% for message in messages %}
+        <script>
+            alert('{{message}}')
+            window.history.back()    
+        </script>
+    {% endfor %}
 
     <div class="lp-banner">
         <img src="{% static '/services/image/model.png' %}" class="">
@@ -32,7 +37,8 @@
             <span>DIARRHEA?</span></p>
 
         <hr class="lp-hr">
-            <p>For more information</p>
+            <p>For more information from</p>
+            <p>Dr. {{ doctor.name }}</p>
         <a href="#langpop" class="clickbtn-lng">CLICK HERE</a>
     </div>
 
